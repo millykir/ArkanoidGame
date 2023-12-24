@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using ArkanoidGameEasy.ViewModels;
+using DemoArkanoid.ViewModels;
 
-namespace ArkanoidGameEasy;
+namespace DemoArkanoid;
 
 public class ViewLocator : IDataTemplate
 {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArkanoidGameEasy", "ArkanoidGameEasy.csproj", "{CF331E23-8C06-4203-A109-16BED2EFFD44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoArkanoid", "DemoArkanoid.csproj", "{04FDAFEA-8ED2-4989-B3C0-63AC7E82C941}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CF331E23-8C06-4203-A109-16BED2EFFD44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF331E23-8C06-4203-A109-16BED2EFFD44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF331E23-8C06-4203-A109-16BED2EFFD44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF331E23-8C06-4203-A109-16BED2EFFD44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04FDAFEA-8ED2-4989-B3C0-63AC7E82C941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04FDAFEA-8ED2-4989-B3C0-63AC7E82C941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04FDAFEA-8ED2-4989-B3C0-63AC7E82C941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04FDAFEA-8ED2-4989-B3C0-63AC7E82C941}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9CECB160-E6BA-447F-A20D-022AD200E901}
+		SolutionGuid = {2AE7FB76-8D48-4C04-A1AF-FAD9F0E9D5D6}
 	EndGlobalSection
 EndGlobal

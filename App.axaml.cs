@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using ArkanoidGameEasy.ViewModels;
-using ArkanoidGameEasy.Views;
+using DemoArkanoid.ViewModels;
+using DemoArkanoid.Views;
 
-namespace ArkanoidGameEasy;
+namespace DemoArkanoid;
 
 public partial class App : Application
 {

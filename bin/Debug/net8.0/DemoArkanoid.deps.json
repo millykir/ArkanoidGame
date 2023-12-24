@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ArkanoidGameEasy/1.0.0": {
+      "DemoArkanoid/1.0.0": {
         "dependencies": {
           "Avalonia": "11.0.6",
           "Avalonia.Desktop": "11.0.6",
@@ -16,7 +16,7 @@
           "Avalonia.Themes.Fluent": "11.0.6"
         },
         "runtime": {
-          "ArkanoidGameEasy.dll": {}
+          "DemoArkanoid.dll": {}
         }
       },
       "Avalonia/11.0.6": {
@@ -74,17 +74,17 @@
           "runtimes/win-arm64/native/av_libglesv2.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "2.1.0.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/av_libglesv2.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "2.1.0.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/av_libglesv2.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "2.1.0.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -971,7 +971,7 @@
     }
   },
   "libraries": {
-    "ArkanoidGameEasy/1.0.0": {
+    "DemoArkanoid/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

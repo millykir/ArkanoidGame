@@ -2,7 +2,7 @@
 using Avalonia.ReactiveUI;
 using System;
 
-namespace ArkanoidGameEasy;
+namespace DemoArkanoid;
 
 sealed class Program
 {
