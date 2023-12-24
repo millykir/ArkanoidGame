@@ -1,45 +1,26 @@
 <Window xmlns="https://github.com/avaloniaui"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-xmlns:vm="using:ArkanoidGameEasy.ViewModels"
-xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-mc:Ignorable="d" d:DesignWidth="1600" d:DesignHeight="1200"
-x:Class="ArkanoidGameEasy.Views.MainWindow"
-x:DataType="vm:MainWindowViewModel"
-Title="Arkanoid">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DemoArkanoid.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="DemoArkanoid.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="DemoArkanoid"
+        KeyUp="MainWindow_KeyUp"
+        KeyDown="MainWindow_KeyDown">
 
-<Design.DataContext>
-    <vm:MainWindowViewModel/>
-</Design.DataContext>
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
 
-<Canvas>
-    <!-- Игровое поле -->
-    <Rectangle Width="1200" Height="800" Fill="Green" Canvas.Left="200" Canvas.Top="200"/>
-
-    <!-- Мяч -->
-    <Ellipse Width="40" Height="40" Fill="Red" Canvas.Left="640" Canvas.Top="640"/>
-
-    <!-- Платформа -->
-    <Rectangle Width="200" Height="40" Fill="White" Canvas.Left="600" Canvas.Top="900"/>
-
-    <!-- Блоки -->
-    <Rectangle Width="100" Height="40" Fill="Gray" Canvas.Left="400" Canvas.Top="580"/>
-    <Rectangle Width="100" Height="40" Fill="Gray" Canvas.Left="510" Canvas.Top="580"/>
-    <Rectangle Width="100" Height="40" Fill="Gray" Canvas.Left="620" Canvas.Top="580"/>
-    <Rectangle Width="100" Height="40" Fill="Gray" Canvas.Left="730" Canvas.Top="580"/>
-    <!-- Добавьте оставшиеся блоки здесь с учетом расстояния между ними -->
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="400" Canvas.Top="460"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="510" Canvas.Top="460"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="620" Canvas.Top="460"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="730" Canvas.Top="460"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="400" Canvas.Top="520"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="510" Canvas.Top="520"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="620" Canvas.Top="520"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="730" Canvas.Top="520"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="400" Canvas.Top="400"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="510" Canvas.Top="400"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="620" Canvas.Top="400"/>
-    <Rectangle Width="100" Height="40" Fill="Blue" Canvas.Left="730" Canvas.Top="400"/>
-</Canvas>
+    <Canvas>
+        <!-- Отображение мяча -->
+        <Ellipse Canvas.Left="{Binding BallX}" Canvas.Top="{Binding BallY}" Width="20" Height="20" Fill="{Binding BallColor}"/>
+        
+        <!-- Отображение ракетки -->
+        <Rectangle Canvas.Left="{Binding PaddleX}" Canvas.Top="{Binding PaddleY}" Width="{Binding PaddleWidth}" Height="{Binding PaddleHeight}" Fill="{Binding PaddleColor}"/>
+    </Canvas>
 
 </Window>
