@@ -170,13 +170,26 @@ namespace DemoArkanoid.ViewModels
             _ball.Y = _paddle.Y - _ball.Radius - 10;
 
             // Создание кирпичей
-            for (int i = 0; i < 12; i++)
+            const int bricksPerRow = 4; // Количество кирпичей в ряду
+            const int brickWidth = 100; // Ширина кирпича
+            const int brickHeight = 30; // Высота кирпича
+            const int gap = 10; // Расстояние между кирпичами
+
+            int startX = (800 - (bricksPerRow * brickWidth + (bricksPerRow - 1) * gap)) / 2; // Вычисляем начальную координату X
+            int startY = 50; // Начальная координата Y
+
+            for (int row = 0; row < 3; row++) // 3 ряда кирпичей
             {
-                double brickX = (i % 4) * 200; // Расположение кирпичей по горизонтали
-                double brickY = (i / 4) * 40 + 50; // Расположение кирпичей по вертикали
-                _bricks.Add(new Brick(brickX, brickY));
+                for (int col = 0; col < bricksPerRow; col++)
+                {
+                    double brickX = startX + col * (brickWidth + gap);
+                    double brickY = startY + row * (brickHeight + gap);
+                    _bricks.Add(new Brick(brickX, brickY));
+                }
             }
         }
+
+
 
         private void HandlePaddleInput()
         {
@@ -191,7 +204,7 @@ namespace DemoArkanoid.ViewModels
 
             // Проверка столкновения мяча с ракеткой
             // Проверка столкновения мяча с ракеткой
-            if (_ball.Y + _ball.Radius >= _paddle.Y && _ball.Y - _ball.Radius <= _paddle.Y + _paddle.Height && _ball.X + _ball.Radius >= _paddle.X && _ball.X - _ball.Radius <= _paddle.X + _paddle.Width)
+            if (_ball.Y + _ball.Radius + _paddle.Height / 2 >= _paddle.Y && _ball.Y + _ball.Radius + _paddle.Height / 2 <= _paddle.Y && _ball.X + _ball.Radius >= _paddle.X && _ball.X - _ball.Radius <= _paddle.X + _paddle.Width)
             {
                 // Вычисляем координаты границ ракетки
                 double paddleLeft = _paddle.X;
@@ -265,13 +278,19 @@ namespace DemoArkanoid.ViewModels
         // Обработчик события нажатия клавиши
         public void KeySpaceStart(KeyEventArgs e)
         {
-
-            _isBallMoving = true;
-            _speedX = -Math.Abs(_speedX); // Устанавливаем скорость в противоположное значение
-            _speedY = -Math.Abs(_speedY); // Устанавливаем скорость в противоположное значение
-            // _ball.X = _paddle.X + _paddle.Width / 2 - _ball.Radius;
-            // _ball.Y = _paddle.Y - _ball.Radius - 10;
-
+            if (_ball.Y + _ball.Radius + _paddle.Height / 2 >= _paddle.Y && _ball.Y + _ball.Radius + _paddle.Height / 2 <= _paddle.Y && _ball.X + _ball.Radius >= _paddle.X && _ball.X - _ball.Radius <= _paddle.X + _paddle.Width)
+            {
+                _isBallMoving = true;
+                _speedX = -Math.Abs(_speedX); // Устанавливаем скорость в противоположное значение
+                _speedY = -Math.Abs(_speedY); // Устанавливаем скорость в противоположное значение
+            }
+        }
+        public void KeyEscPressed(KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }

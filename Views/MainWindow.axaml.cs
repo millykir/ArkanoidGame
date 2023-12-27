@@ -25,23 +25,27 @@ namespace DemoArkanoid.Views
             {
                 ((MainWindowViewModel)DataContext).KeySpaceStart(e);
             }
-
+            else if (e.Key == Key.Escape)
+            {
+                ((MainWindowViewModel)DataContext).KeyEscPressed(e);
+            }
         }
 
-        private void MainWindow_KeyUp(object? sender, KeyEventArgs e)
+
+    private void MainWindow_KeyUp(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Left || e.Key == Key.A)
         {
-            if (e.Key == Key.Left || e.Key == Key.A)
-            {
-                ((MainWindowViewModel)DataContext).PlayerUp = false;
-            }
-            else if (e.Key == Key.Right || e.Key == Key.D)
-            {
-                ((MainWindowViewModel)DataContext).PlayerDown = false;
-            }
-            else if (e.Key == Key.Space)
-            {
-                ((MainWindowViewModel)DataContext).KeySpaceStart(e);
-            }
+            ((MainWindowViewModel)DataContext).PlayerUp = false;
+        }
+        else if (e.Key == Key.Right || e.Key == Key.D)
+        {
+            ((MainWindowViewModel)DataContext).PlayerDown = false;
+        }
+        else if (e.Key == Key.Space)
+        {
+            ((MainWindowViewModel)DataContext).KeySpaceStart(e);
         }
     }
+}
 }

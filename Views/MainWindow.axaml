@@ -9,7 +9,9 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="DemoArkanoid"
         KeyUp="MainWindow_KeyUp"
-        KeyDown="MainWindow_KeyDown">
+        KeyDown="MainWindow_KeyDown"
+        Width="800"
+        Height="600">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -17,32 +19,35 @@
 
     <Canvas>
         <!-- Черный прямоугольник -->
-        <Rectangle Canvas.Left="0" Canvas.Top="0" Width="800" Height="600" Fill="Gray"/>
-
+        <Image Canvas.Left="0" Canvas.Top="0" Width="800" Height="600" Source="/Assets/background_image.png"/>
         <!-- Отображение мяча -->
         <Ellipse Canvas.Left="{Binding BallX}" Canvas.Top="{Binding BallY}" Width="20" Height="20" Fill="{Binding BallColor}"/>
 
         <!-- Отображение ракетки -->
-        <Rectangle Canvas.Left="{Binding PaddleX}" Canvas.Top="{Binding PaddleY}" Width="{Binding PaddleWidth}" Height="{Binding PaddleHeight}" Fill="{Binding PaddleColor}"/>
+        <Image Canvas.Left="{Binding PaddleX}" Canvas.Top="{Binding PaddleY}" Width="{Binding PaddleWidth}" Height="{Binding PaddleHeight}" Source="/Assets/paddle_image.png"/>
 
         <!-- Отображение кирпичей -->
-        <Rectangle Canvas.Left="{Binding Bricks[0].X}" Canvas.Top="{Binding Bricks[0].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[0].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[1].X}" Canvas.Top="{Binding Bricks[1].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[1].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[2].X}" Canvas.Top="{Binding Bricks[2].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[2].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[3].X}" Canvas.Top="{Binding Bricks[3].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[3].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[4].X}" Canvas.Top="{Binding Bricks[4].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[4].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[5].X}" Canvas.Top="{Binding Bricks[5].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[5].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[6].X}" Canvas.Top="{Binding Bricks[6].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[6].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[7].X}" Canvas.Top="{Binding Bricks[7].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[7].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[8].X}" Canvas.Top="{Binding Bricks[8].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[8].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[9].X}" Canvas.Top="{Binding Bricks[9].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[9].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[10].X}" Canvas.Top="{Binding Bricks[10].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[10].IsVisible}"/>
-        <Rectangle Canvas.Left="{Binding Bricks[11].X}" Canvas.Top="{Binding Bricks[11].Y}" Width="60" Height="20" Fill="Red" IsVisible="{Binding Bricks[11].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[0].X}" Canvas.Top="{Binding Bricks[0].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[0].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[1].X}" Canvas.Top="{Binding Bricks[1].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[1].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[2].X}" Canvas.Top="{Binding Bricks[2].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[2].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[3].X}" Canvas.Top="{Binding Bricks[3].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[3].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[4].X}" Canvas.Top="{Binding Bricks[4].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[4].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[5].X}" Canvas.Top="{Binding Bricks[5].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[5].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[6].X}" Canvas.Top="{Binding Bricks[6].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[6].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[7].X}" Canvas.Top="{Binding Bricks[7].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[7].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[8].X}" Canvas.Top="{Binding Bricks[8].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[8].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[9].X}" Canvas.Top="{Binding Bricks[9].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[9].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[10].X}" Canvas.Top="{Binding Bricks[10].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[10].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[11].X}" Canvas.Top="{Binding Bricks[11].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[11].IsVisible}"/>
+
 
         <!-- Отображение количества жизней -->
         <TextBlock Text="{Binding Lives}" FontSize="24" Foreground="Black" Canvas.Left="10" Canvas.Top="10"/>
 
         <!-- Отображение сообщения о победе или поражении -->
         <TextBlock Text="{Binding GameResult}" FontSize="48" Foreground="Black" Canvas.Left="300" Canvas.Top="250"/>
+
+                <!-- Подсветка Esc -->
+        <TextBlock Text="Esc - exit" FontSize="16" Foreground="Black" Canvas.Left="715" Canvas.Top="10" FontWeight="Bold"/>
     </Canvas>
 </Window>

@@ -25,6 +25,8 @@ namespace DemoArkanoid.Models
         }
 
         public bool IsVisible => !_isDestroyed;
+        public bool IsSpecialBrick { get; } = false;
+
 
         public Brick(double initialX, double initialY)
         {
