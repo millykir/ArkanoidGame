@@ -4,7 +4,7 @@ namespace DemoArkanoid.Models
     {
         public double X { get; set; }
         public double Y { get; set; }
-        public double Radius { get; } = 10; // Радиус мяча
+        public double Radius { get; } = 20; // Радиус мяча
 
         public Ball(double initialX, double initialY)
         {

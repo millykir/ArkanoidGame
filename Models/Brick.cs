@@ -8,8 +8,34 @@ namespace DemoArkanoid.Models
 
         public double X { get; set; }
         public double Y { get; set; }
-        public double Width { get; } = 60;
-        public double Height { get; } = 20;
+        private double _width = 100;
+        private double _height = 20;
+
+        public double Width
+        {
+            get { return _width; }
+            set
+            {
+                if (_width != value)
+                {
+                    _width = value;
+                    OnPropertyChanged(nameof(Width));
+                }
+            }
+        }
+
+        public double Height
+        {
+            get { return _height; }
+            set
+            {
+                if (_height != value)
+                {
+                    _height = value;
+                    OnPropertyChanged(nameof(Height));
+                }
+            }
+        }
         public bool IsDestroyed
         {
             get { return _isDestroyed; }

@@ -16,29 +16,29 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
+    
     <Canvas>
         <!-- Черный прямоугольник -->
         <Image Canvas.Left="0" Canvas.Top="0" Width="800" Height="600" Source="/Assets/background_image.png"/>
         <!-- Отображение мяча -->
-        <Ellipse Canvas.Left="{Binding BallX}" Canvas.Top="{Binding BallY}" Width="20" Height="20" Fill="{Binding BallColor}"/>
+        <Ellipse Canvas.Left="{Binding BallX}" Canvas.Top="{Binding BallY}" Width="{Binding BallRadius}" Height="{Binding BallRadius}" Fill="{Binding BallColor}"/>
 
         <!-- Отображение ракетки -->
         <Image Canvas.Left="{Binding PaddleX}" Canvas.Top="{Binding PaddleY}" Width="{Binding PaddleWidth}" Height="{Binding PaddleHeight}" Source="/Assets/paddle_image.png"/>
 
         <!-- Отображение кирпичей -->
-        <Image Canvas.Left="{Binding Bricks[0].X}" Canvas.Top="{Binding Bricks[0].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[0].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[1].X}" Canvas.Top="{Binding Bricks[1].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[1].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[2].X}" Canvas.Top="{Binding Bricks[2].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[2].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[3].X}" Canvas.Top="{Binding Bricks[3].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[3].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[4].X}" Canvas.Top="{Binding Bricks[4].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[4].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[5].X}" Canvas.Top="{Binding Bricks[5].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[5].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[6].X}" Canvas.Top="{Binding Bricks[6].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[6].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[7].X}" Canvas.Top="{Binding Bricks[7].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[7].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[8].X}" Canvas.Top="{Binding Bricks[8].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[8].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[9].X}" Canvas.Top="{Binding Bricks[9].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[9].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[10].X}" Canvas.Top="{Binding Bricks[10].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[10].IsVisible}"/>
-        <Image Canvas.Left="{Binding Bricks[11].X}" Canvas.Top="{Binding Bricks[11].Y}" Width="60" Height="20" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[11].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[0].X}" Canvas.Top="{Binding Bricks[0].Y}" Width="{Binding Bricks[0].Width}" Height="{Binding Bricks[0].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[0].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[1].X}" Canvas.Top="{Binding Bricks[1].Y}" Width="{Binding Bricks[1].Width}" Height="{Binding Bricks[1].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[1].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[2].X}" Canvas.Top="{Binding Bricks[2].Y}" Width="{Binding Bricks[2].Width}" Height="{Binding Bricks[2].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[2].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[3].X}" Canvas.Top="{Binding Bricks[3].Y}" Width="{Binding Bricks[3].Width}" Height="{Binding Bricks[3].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[3].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[4].X}" Canvas.Top="{Binding Bricks[4].Y}" Width="{Binding Bricks[4].Width}" Height="{Binding Bricks[4].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[4].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[5].X}" Canvas.Top="{Binding Bricks[5].Y}" Width="{Binding Bricks[5].Width}" Height="{Binding Bricks[5].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[5].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[6].X}" Canvas.Top="{Binding Bricks[6].Y}" Width="{Binding Bricks[6].Width}" Height="{Binding Bricks[6].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[6].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[7].X}" Canvas.Top="{Binding Bricks[7].Y}" Width="{Binding Bricks[7].Width}" Height="{Binding Bricks[7].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[7].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[8].X}" Canvas.Top="{Binding Bricks[8].Y}" Width="{Binding Bricks[8].Width}" Height="{Binding Bricks[8].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[8].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[9].X}" Canvas.Top="{Binding Bricks[9].Y}" Width="{Binding Bricks[9].Width}" Height="{Binding Bricks[9].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[9].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[10].X}" Canvas.Top="{Binding Bricks[10].Y}" Width="{Binding Bricks[10].Width}" Height="{Binding Bricks[10].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[10].IsVisible}"/>
+        <Image Canvas.Left="{Binding Bricks[11].X}" Canvas.Top="{Binding Bricks[11].Y}" Width="{Binding Bricks[11].Width}" Height="{Binding Bricks[11].Height}" Source="/Assets/brick_image.png" IsVisible="{Binding Bricks[11].IsVisible}"/>
 
 
         <!-- Отображение количества жизней -->
@@ -47,7 +47,9 @@
         <!-- Отображение сообщения о победе или поражении -->
         <TextBlock Text="{Binding GameResult}" FontSize="48" Foreground="Black" Canvas.Left="300" Canvas.Top="250"/>
 
-                <!-- Подсветка Esc -->
+         <!-- Инфо выход Esc -->
         <TextBlock Text="Esc - exit" FontSize="16" Foreground="Black" Canvas.Left="715" Canvas.Top="10" FontWeight="Bold"/>
+    
     </Canvas>
+    
 </Window>

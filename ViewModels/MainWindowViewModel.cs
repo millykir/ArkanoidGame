@@ -83,7 +83,7 @@ namespace DemoArkanoid.ViewModels
 
                         // Мяч вставляется на середину ракетки
                         _ball.X = _paddle.X + _paddle.Width / 2 - _ball.Radius;
-                        _ball.Y = _paddle.Y - _ball.Radius - 10;
+                        _ball.Y = _paddle.Y - _ball.Radius;
                     }
                     else
                     {
@@ -167,7 +167,7 @@ namespace DemoArkanoid.ViewModels
             _gameTimer.Start();
 
             _ball.X = _paddle.X + _paddle.Width / 2 - _ball.Radius;
-            _ball.Y = _paddle.Y - _ball.Radius - 10;
+            _ball.Y = _paddle.Y - _ball.Radius;
 
             // Создание кирпичей
             const int bricksPerRow = 4; // Количество кирпичей в ряду
@@ -184,7 +184,7 @@ namespace DemoArkanoid.ViewModels
                 {
                     double brickX = startX + col * (brickWidth + gap);
                     double brickY = startY + row * (brickHeight + gap);
-                    _bricks.Add(new Brick(brickX, brickY));
+                    _bricks.Add(new Brick(brickX, brickY) { Width = brickWidth, Height = brickHeight });
                 }
             }
         }
@@ -201,10 +201,8 @@ namespace DemoArkanoid.ViewModels
 
         private void HandleBorderCollisions()
         {
-
             // Проверка столкновения мяча с ракеткой
-            // Проверка столкновения мяча с ракеткой
-            if (_ball.Y + _ball.Radius + _paddle.Height / 2 >= _paddle.Y && _ball.Y + _ball.Radius + _paddle.Height / 2 <= _paddle.Y && _ball.X + _ball.Radius >= _paddle.X && _ball.X - _ball.Radius <= _paddle.X + _paddle.Width)
+            if (_ball.Y + _ball.Radius >= _paddle.Y && _ball.Y - _ball.Radius <= _paddle.Y && _ball.X + _ball.Radius >= _paddle.X && _ball.X - _ball.Radius <= _paddle.X + _paddle.Width)
             {
                 // Вычисляем координаты границ ракетки
                 double paddleLeft = _paddle.X;
@@ -220,16 +218,16 @@ namespace DemoArkanoid.ViewModels
                     _speedX = -Math.Abs(_initialSpeedX);
                     _speedY = -Math.Abs(_speedY);
                 }
-                if (_ball.X <= paddleRight && _ball.X >= paddleRightCenter)
+                else if (_ball.X <= paddleRight && _ball.X >= paddleRightCenter)
                 {
-                    // Левая часть, отправляет влево
+                    // Правая часть, отправляет вправо
                     _speedX = Math.Abs(_initialSpeedX);
                     _speedY = -Math.Abs(_speedY);
                 }
                 else if (_ball.X > paddleLeftCenter && _ball.X < paddleCenter)
                 {
                     // Центральная часть, отправляет вверх
-                    _speedX = -Math.Abs(_initialSpeedX * 0.5); ;
+                    _speedX = -Math.Abs(_initialSpeedX * 0.5);
                     _speedY = -Math.Abs(_speedY);
                 }
                 else if (_ball.X <= paddleRightCenter && _ball.X >= paddleCenter)
@@ -240,7 +238,7 @@ namespace DemoArkanoid.ViewModels
                 }
 
                 // Изменение позиции мяча, чтобы он не застревал в ракетке
-                _ball.Y = _paddle.Y - _ball.Radius - 10;
+                _ball.Y = _paddle.Y - _ball.Radius;
             }
 
             // Столкновение с правой границей
@@ -272,13 +270,16 @@ namespace DemoArkanoid.ViewModels
         public double PaddleY => _paddle.Y;
         public double PaddleWidth => _paddle.Width;
         public double PaddleHeight => _paddle.Height;
-        public IBrush BallColor => Brushes.Blue;
+        public IBrush BallColor => Brushes.Yellow;
         public IBrush PaddleColor => Brushes.Green;
+        public double BallRadius => _ball.Radius;
+
+
 
         // Обработчик события нажатия клавиши
         public void KeySpaceStart(KeyEventArgs e)
         {
-            if (_ball.Y + _ball.Radius + _paddle.Height / 2 >= _paddle.Y && _ball.Y + _ball.Radius + _paddle.Height / 2 <= _paddle.Y && _ball.X + _ball.Radius >= _paddle.X && _ball.X - _ball.Radius <= _paddle.X + _paddle.Width)
+            if (_ball.Y + _ball.Radius >= _paddle.Y && _ball.Y + _ball.Radius <= _paddle.Y && _ball.X + _ball.Radius >= _paddle.X && _ball.X - _ball.Radius <= _paddle.X + _paddle.Width)
             {
                 _isBallMoving = true;
                 _speedX = -Math.Abs(_speedX); // Устанавливаем скорость в противоположное значение
